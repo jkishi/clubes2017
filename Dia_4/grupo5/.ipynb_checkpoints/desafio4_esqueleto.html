@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Un juego</title>
+</head>
+<body>
+
+<h1>Juego: Adivinando el número</h1>
+
+<p>Hemos seleccionado un número entre 1 y 100. ¿Puedes adivinar el número en menos de 10 intentos?</p>
+
+<div class="form">
+  <label for="porIntento">Adivina aquí: </label>
+  <input type="text" class="intento">
+  <input type="submit" value="Enviar" class="enviarIntento">
+</div>
+
+<p class="intentos"></p>
+<p class="textoResultado"></p>
+
+</body>
+
+<script>
+  // Declaración de variables
+  var numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+
+  var enviarIntento = document.querySelector('.enviarIntento');
+  var intento = document.querySelector('.intento');
+
+  var intentos = document.querySelector('.intentos');
+  var textoResultado = document.querySelector('.textoResultado');
+
+  var cuentaDeAdivinanzas = 1;
+
+  // Declaración de funciona para el juego
+  function comprobarAdivinanza(letra) { 
+    var adivinanza = Number(intento.value);
+   
+    // TODO
+
+    intento.value = '';
+    intento.focus();
+  }
+
+
+  // Indica cuál función activa cuando se hace clic en el botón
+  enviarIntento.addEventListener('click', comprobarAdivinanza)
+
+  // Declaración de función que se activa al fin del juego
+  function terminarJuego() {
+    intento.disabled = true;
+    enviarIntento.disabled = true;
+  }
+</script>
+
+</body>
+</html>

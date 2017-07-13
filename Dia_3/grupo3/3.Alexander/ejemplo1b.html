@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Título de la página</title>
+</head>
+<body>
+
+<h1 class="textoTitulo">cambia el titulo</h1>
+    <h2>Una prespectiva colombiana</h2>
+
+<img src="descarga.jpg" width=200 height=200>
+
+<h3>introducción</h3>
+    <p class="textoCuerpo">somos estudiantes analisando datos del tiempo de colombia desde años pasados.</p>
+<h3>mas informacion</h3>
+    <a href="http://www.clubesdeciencia.co/">esto es un enlace al sitio para los clubes de ciencia, colombia. </a>
+<br>
+    <br>
+<div>
+  <label>Texto del título: </label>
+  <input type="text" class="nuevoTextoTitulo">
+  <input type="submit" value="Enviame" class="enviarTitulo">
+</div>
+   
+    
+    <div>
+  <label>Texto del cuerpo: </label>
+  <input type="text" class="nuevoTextoCuerpo">
+  <input type="submit" value="Enviame" class="enviarCuerpo">
+</div>
+
+<script>
+  // Declaraciones de variables
+  var textoTitulo = document.querySelector('.textoTitulo');
+  var nuevoTextoTitulo = document.querySelector('.nuevoTextoTitulo');
+  var enviarTitulo = document.querySelector('.enviarTitulo');
+
+  // Declaraciones de funciones
+  function cambiarTitulo() {
+    textoTitulo.textContent = nuevoTextoTitulo.value;
+  }
+      
+   // Indica cuál función activa cuando se hace clic en un botón
+  enviarTitulo.addEventListener('click', cambiarTitulo);
+
+    
+    
+  // Declaraciones de variables
+  var textoCuerpo = document.querySelector('.textoCuerpo');
+  var nuevoTextoCuerpo = document.querySelector('.nuevoTextoCuerpo');
+  var enviarCuerpo = document.querySelector('.enviarCuerpo');
+
+  // Declaraciones de funciones
+  function cambiarCuerpo() {
+    textoCuerpo.textContent = nuevoTextoCuerpo.value;
+  }
+      
+   // Indica cuál función activa cuando se hace clic en un botón
+  enviarCuerpo.addEventListener('click', cambiarCuerpo);
+</script>
+
+
+</body>
+</html>

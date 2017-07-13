@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Título de la página</title>
+</head>
+<body>
+
+<h1>El Calentamiento Global.</h1>
+<p>Esto es un párrafo.</p>
+<h2>una perspectiva colombiana.</h2>
+<a href="http://www.facebook.com">  </a>
+
+<img src="GlobalC.jpg" width=200 height=200>
+<h3>introduccion.</h3>
+<p>somos estudiantes analizando datos del tiempo de colombia desde años pasados. </p>
+<h3>mas informacion.<h3>
+<a href=> este es un enlace al sitio para los clubes de ciencia,Colombia
+</body>
+</html>
+ 

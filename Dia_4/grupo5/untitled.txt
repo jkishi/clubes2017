@@ -1,0 +1,10 @@
+
+plt.plot(historia_temperaturas.dt,historia_temperaturas.temperatura_promedio)
+plt.xlabel('Año',fontsize = 14, fontweight='bold')
+plt.ylabel('Temperatura($c^{0}$)', fontsize = 14,fontweight='bold')
+
+
+plt.savefig('calentamiento_global')
+el calentamiento global y cambio climatico en los ultimos siglos de la temperatura ,de la tierra y sus efectos.
+Multiples pruebas demuestran que el sistema climatico se esta calentando.
+la prensa comunica elincremento de la temperatura admosferica como medicion de calentamiento global.

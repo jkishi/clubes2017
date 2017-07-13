@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Un juego</title>
+</head>
+<body background="images.jpg">
+
+    <h1>Juego: Adivinando la palabra</h1>
+
+    <p>Hemos seleccionado una palabra. ¿Puedes adivinarla en menos de 12 intentos</p>
+
+<div class="form">
+</div>
+
+<p class="textoResultado"></p>
+
+</body>
+
+<script>
+  // Declaración de variables
+  var palabras = ['Hola', 'Colombia', 'Clubes', 'Ciencias', 'Javascript','Brujula','conocimiento','configuracion','aprendizaje','coleccion','colaboracion','manualidades','conjugacion']
+  var numeroAleatorio = Math.floor(Math.random() * palabras.length);
+  var palabraAleatorio = palabras[numeroAleatorio]
+  console.log(palabraAleatorio)
+
+  var forma = document.querySelector('.form')
+
+  var letras=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+    var botones = [];
+    
+    for (var i = 0; i< letras.length; i++) {
+    var enviar = document.createElement("input");
+  enviar.type = 'submit'
+  enviar.value = letras[i]
+  forma.appendChild(enviar)
+  botones.push(enviar)
+    }
+    
+  var textoResultado = document.querySelector('.textoResultado');
+  var resultadoActual = ''
+  for (var i = 0; i < palabraAleatorio.length; i++) {
+    resultadoActual += '#';
+  }
+  textoResultado.textContent = resultadoActual
+
+  var cuentaDeAdivinanzas = 1;
+
+  // Declaración de función para el juego
+  function comprobarAdivinanza(boton, letra) {
+    boton.disabled = true;
+
+    if (palabraAleatorio.toLowerCase().includes(letra.toLowerCase())) {
+      for (var i = 0; i < palabraAleatorio.length; i++) {
+        if (palabraAleatorio[i].toLowerCase() === letra.toLowerCase()) {
+          resultadoActual = resultadoActual.substr(0, i) + palabraAleatorio[i] + resultadoActual.substr(i + 1)
+        }
+      }
+
+      textoResultado.textContent = resultadoActual
+    }
+
+    if (resultadoActual.includes('#') === false)   {
+      textoResultado.textContent = '¡Felicitaciones! ¡Lo lograste! Refresca la página para volver a jugar.';
+      terminarJuego();
+    } else if (cuentaDeAdivinanzas === 10) {
+      textoResultado.textContent = '¡GAME OVER! Refresca la página para intentar de nuevo.';
+      terminarJuego();
+    }
+   
+    cuentaDeAdivinanzas++;
+  }
+
+  // Indica cuál función activa cuando se hace clic en el botón
+    for (var  i = 0; i < letras.length; i++) {
+     (function (i) {botones[i].addEventListener('click', function() {comprobarAdivinanza(botones[i], letras[i])})}(i))
+    }
+  // Declaración de función que se activa al fin del juego
+  function terminarJuego() {
+      for (var  i = 0; i < letras.length; i++) {
+    botones[i].disabled = true;
+      }
+  }
+</script>
+
+</body>
+</html>

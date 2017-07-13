@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Un juego</title>
+</head>
+<body>
+
+<h1>Práctica con Javascript</h1>
+
+<script>
+  // EJEMPLO 1: Escribir algo en el console
+  console.log('\n** Ejemplo 1 **');
+
+  console.log('Hola');
+
+
+  // EJEMPLO 2: Usar un for-loop para iterar
+  console.log('\n** Ejemplo 2 **');
+
+  for (var i = 0; i < 12; i++) {
+    console.log('iteración ' + i);
+  }
+
+
+  // EJEMPLO 3: Usar lógico para escribir números pares
+  console.log('\n** Ejemplo 3 **');
+
+  for (var i = 0; i < 12; i++) {
+    if (i % 2 === 0) {
+      console.log(i);
+    }
+  }
+
+  // EJEMPLO 4: Escribir subcadenas de texto
+  console.log('\n** Ejemplo 4 **');
+
+  var frase = 'Nos estamos divirtiendo!'
+  for (var i = 0; i <= frase.length; i++) {
+    console.log(frase.substr(0, i));
+  }
+
+  // EJEMPLO 5: Multiplicar los elementos de una lista
+  console.log('\n** Ejemplo 5 **')
+  var numeros = [2, 2, 5, 100];
+  var multiplicacion = 1;
+  for (var i = 0; i < numeros.length; i++) {
+    multiplicacion *= numeros[i];
+  }
+  console.log(multiplicacion);
+
+</script>
+
+</body>
+</html>

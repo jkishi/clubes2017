@@ -1,0 +1,39 @@
+section.galeria {
+    margin:0 auto;
+    flex-flow: row wrap;
+    display: flex;
+    padding: 5%;
+    padding-bottom: 2%;
+    max-width: 1000px;
+}
+section.galeria div {
+    flex: 200px;
+    width: 200px;
+    padding: 10px,
+}
+section.galeria div img {
+    width: 200px;
+    height: 200px;
+    max-height: 200px;
+    max-width: 200px;
+}
+section.galeria div img:hover{
+    width: 500px;
+    height: 500px;
+    max-height: 500px;
+    max-width: 500px;
+    position: relative;
+    cursor: pointer;
+}
+
+section.galeria div span {
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+@media(min-width:480px) {
+    section.galeria{
+        width:auto;
+    }
+}

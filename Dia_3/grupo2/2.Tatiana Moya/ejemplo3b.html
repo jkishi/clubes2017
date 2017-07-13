@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Practica con formas</title>
+</head>
+<body>
+
+<h1 class="textoTitulo">El Título</h1>
+
+<p class="textoCuerpo">El cuerpo</p>
+
+<div>
+  <label>Texto del título: </label>
+  <input type="text" class="nuevoTextoTitulo">
+  <input type="submit" value="Enviar" class="enviarTitulo">
+  <label> Color del texto: </label>
+  <input type="submit" value="Negro" class="enviarTextoTituloNegro">
+  <label> Color de fondo: </label>
+  <input type="submit" value="Rosado" class="enviarFondoTituloRosado">
+</div>
+
+<div>
+  <label>Texto del cuerpo: </label>
+  <input type="text" class="nuevoTextoCuerpo">
+  <input type="submit" value="Enviar" class="enviarCuerpo">
+  <input type="text" placeholder="color (texto)" class="colorTextoCuerpo">
+  <input type="submit" value="Enviar" class="enviarTextoCuerpoColor">
+  <input type="text" placeholder="color (fondo)" class="colorFondoCuerpo">
+  <input type="submit" value="Enviar" class="enviarFondoCuerpoColor">
+</div>
+
+<script>
+  // Declaraciones de variables
+  var textoTitulo = document.querySelector('.textoTitulo');
+  var nuevoTextoTitulo = document.querySelector('.nuevoTextoTitulo');
+  var enviarTitulo = document.querySelector('.enviarTitulo');
+
+  var textoCuerpo = document.querySelector('.textoCuerpo');
+  var nuevoTextoCuerpo = document.querySelector('.nuevoTextoCuerpo');
+  var enviarCuerpo = document.querySelector('.enviarCuerpo');
+
+  var enviarTextoTituloNegro = document.querySelector('.enviarTextoTituloNegro');
+  var enviarFondoTituloRosado = document.querySelector('.enviarFondoTituloRosado');
+
+  var enviarTextoCuerpoColor = document.querySelector('.enviarTextoCuerpoColor');
+  var enviarFondoCuerpoColor = document.querySelector('.enviarFondoCuerpoColor');
+    
+  var colorTextoCuerpo = document.querySelector('.colorTextoCuerpo');
+  var colorFondoCuerpo = document.querySelector('.colorFondoCuerpo');
+
+  // Declaraciones de funciones
+  function cambiarTitulo() {
+  	textoTitulo.textContent = nuevoTextoTitulo.value;
+  }
+
+  function cambiarCuerpo() {
+  	textoCuerpo.textContent = nuevoTextoCuerpo.value;
+  }
+
+  function cambiarColorTextoTitulo(color) {
+    textoTitulo.style.color = color;
+  }
+
+  function cambiarColorFondoTitulo(color) {
+    textoTitulo.style.backgroundColor = color;
+  }
+
+  function cambiarColorTextoCuerpo(color) {
+    textoCuerpo.style.color = color;
+  }
+
+  function cambiarColorFondoCuerpo(color) {
+    textoCuerpo.style.backgroundColor = color;
+  }
+
+  // Indica cuál función activa cuando se hace clic en un botón
+  enviarTitulo.addEventListener('click', cambiarTitulo);
+  enviarCuerpo.addEventListener('click', cambiarCuerpo);
+
+  enviarTextoTituloNegro.addEventListener('click', function() {cambiarColorTextoTitulo('black')});
+  enviarFondoTituloRosado.addEventListener('click', function() {cambiarColorFondoTitulo('pink')});
+  
+  enviarTextoCuerpoColor.addEventListener('click', function() {cambiarColorTextoCuerpo(colorTextoCuerpo.value)});
+  enviarFondoCuerpoColor.addEventListener('click', function() {cambiarColorFondoCuerpo(colorFondoCuerpo.value)});
+</script>
+
+</body>
+</html>
+
+

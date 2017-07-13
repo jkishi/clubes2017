@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Práctica con formas</title>
+</head>
+<body>
+
+<h1 class="textoTitulo">El Título</h1>
+
+<p class="textoCuerpo">El cuerpo</p>
+
+<div>
+  <label>Texto del título: </label>
+  <input type="text" class="nuevoTextoTitulo">
+  <input type="submit" value="Enviar" class="enviarTitulo">
+  <label> Color del texto: </label>
+  <input type="submit" value="Rojo" class="enviarTextoTituloRojo">
+</div>
+
+<script>
+  // Declaraciones de variables
+  var textoTitulo = document.querySelector('.textoTitulo');
+  var nuevoTextoTitulo = document.querySelector('.nuevoTextoTitulo');
+  var enviarTitulo = document.querySelector('.enviarTitulo');
+
+  var enviarTextoTituloRojo = document.querySelector('.enviarTextoTituloRojo');
+
+  // Declaraciones de funciones
+  function cambiarTitulo() {
+    textoTitulo.textContent = nuevoTextoTitulo.value;
+  }
+
+  function cambiarColorTextoTitulo(color) {
+    textoTitulo.style.color = color;
+  }
+
+  // Indica cuál función activa cuando se hace clic en un botón
+  enviarTitulo.addEventListener('click', cambiarTitulo);
+
+  enviarTextoTituloRojo.addEventListener('click', function() {cambiarColorTextoTitulo('red')});
+</script>
+
+</body>
+</html>

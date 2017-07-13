@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Un juego</title>
+</head>
+<body>
+
+<h1>Juego: Adivinando la palabra</h1>
+
+<p>Hemos seleccionado una palabra. ¿Puedes adivinarla en menos de 10 intentos?</p>
+
+<div class="form">
+  <input type="submit" value="A" class="enviarA">
+  <input type="submit" value="B" class="enviarB">
+  <input type="submit" value="C" class="enviarC">
+  <input type="submit" value="D" class="enviarD">
+  <input type="submit" value="E" class="enviarE">
+  <input type="submit" value="F" class="enviarF">
+  <input type="submit" value="G" class="enviarG">
+  <input type="submit" value="H" class="enviarH">
+  <input type="submit" value="I" class="enviarI">
+  <input type="submit" value="J" class="enviarJ">
+  <input type="submit" value="K" class="enviarK">
+  <input type="submit" value="L" class="enviarL">
+  <input type="submit" value="M" class="enviarM">
+  <input type="submit" value="N" class="enviarN">
+  <input type="submit" value="O" class="enviarO">
+  <input type="submit" value="P" class="enviarP">
+  <input type="submit" value="Q" class="enviarQ">
+  <input type="submit" value="R" class="enviarR">
+  <input type="submit" value="S" class="enviarS">
+  <input type="submit" value="T" class="enviarT">
+  <input type="submit" value="V" class="enviarV">
+  <input type="submit" value="W" class="enviarW">
+  <input type="submit" value="X" class="enviarX">
+  <input type="submit" value="Y" class="enviarY">
+  <input type="submit" value="Z" class="enviarZ">
+
+
+</div>
+
+<p class="textoResultado"></p>
+
+</body>
+
+<script>
+  // Declaración de variables
+  var palabras = ['Hola', 'Colombia', 'Clubes', 'Ciencias', 'Javascript', 'Microsoft'];
+  var numeroAleatorio = Math.floor(Math.random() * palabras.length);
+  var palabraAleatorio = palabras[numeroAleatorio];
+  console.log(palabraAleatorio);
+
+  var enviarA = document.querySelector('.enviarA');
+  var enviarB = document.querySelector('.enviarB');
+  var enviarC = document.querySelector('.enviarC');
+  var enviarD = document.querySelector('.enviarD');
+  var enviarE = document.querySelector('.enviarE');
+  var enviarF = document.querySelector('.enviarF');
+  var enviarG = document.querySelector('.enviarG');
+  var enviarH = document.querySelector('.enviarH');
+  var enviarI = document.querySelector('.enviarI');
+  var enviarJ = document.querySelector('.enviarJ');
+  var enviarK = document.querySelector('.enviarK');
+  var enviarL = document.querySelector('.enviarL');
+  var enviarM = document.querySelector('.enviarM');
+  var enviarN = document.querySelector('.enviarN');
+  var enviarO = document.querySelector('.enviarO');
+  var enviarP = document.querySelector('.enviarP');
+  var enviarQ = document.querySelector('.enviarQ');
+  var enviarR = document.querySelector('.enviarR');
+  var enviarS = document.querySelector('.enviarS');
+  var enviarT = document.querySelector('.enviarT');
+  var enviarV = document.querySelector('.enviarV');
+  var enviarW = document.querySelector('.enviarW');
+  var enviarX = document.querySelector('.enviarX');
+  var enviarY = document.querySelector('.enviarY');
+  var enviarZ = document.querySelector('.enviarZ');
+
+
+
+
+  var textoResultado = document.querySelector('.textoResultado');
+  var resultadoActual = '';
+  for (var i = 0; i < palabraAleatorio.length; i++) {
+    resultadoActual += '#';
+  }
+  textoResultado.textContent = resultadoActual;
+
+  var cuentaDeAdivinanzas = 1;
+
+  // Declaración de función para el juego
+  function comprobarAdivinanza(boton, letra) {
+    boton.disabled = true;
+
+    if (palabraAleatorio.toLowerCase().includes(letra.toLowerCase())) {
+      for (var i = 0; i < palabraAleatorio.length; i++) {
+        if (palabraAleatorio[i].toLowerCase() === letra.toLowerCase()) {
+          resultadoActual = resultadoActual.substr(0, i) + palabraAleatorio[i] + resultadoActual.substr(i + 1);
+        }
+      }
+
+      textoResultado.textContent = resultadoActual;
+    }
+
+    if (resultadoActual.includes('#') === false) {
+      textoResultado.textContent = '¡Felicitaciones! ¡Lo lograste! Refresca la página para volver a jugar.';
+      terminarJuego();
+    } else if (cuentaDeAdivinanzas === 20) {
+      textoResultado.textContent = '¡GAME OVER! Refresca la página para intentar de nuevo.';
+      terminarJuego();
+    }
+   
+    cuentaDeAdivinanzas++;
+  }
+
+  // Indica cuál función activa cuando se hace clic en el botón
+  enviarA.addEventListener('click', function() {comprobarAdivinanza(enviarA, 'A')});
+  enviarB.addEventListener('click', function() {comprobarAdivinanza(enviarB, 'B')});
+  enviarC.addEventListener('click', function() {comprobarAdivinanza(enviarC, 'C')});
+  enviarD.addEventListener('click', function() {comprobarAdivinanza(enviarD, 'D')});
+  enviarE.addEventListener('click', function() {comprobarAdivinanza(enviarE, 'E')});
+  enviarF.addEventListener('click', function() {comprobarAdivinanza(enviarF, 'F')});
+  enviarG.addEventListener('click', function() {comprobarAdivinanza(enviarG, 'G')});
+  enviarH.addEventListener('click', function() {comprobarAdivinanza(enviarH, 'H')});
+  enviarI.addEventListener('click', function() {comprobarAdivinanza(enviarI, 'I')});
+  enviarJ.addEventListener('click', function() {comprobarAdivinanza(enviarJ, 'J')});
+  enviarK.addEventListener('click', function() {comprobarAdivinanza(enviarK, 'K')});
+  enviarL.addEventListener('click', function() {comprobarAdivinanza(enviarL, 'L')});
+  enviarM.addEventListener('click', function() {comprobarAdivinanza(enviarM, 'M')});
+  enviarN.addEventListener('click', function() {comprobarAdivinanza(enviarN, 'N')});
+  enviarO.addEventListener('click', function() {comprobarAdivinanza(enviarO, 'O')});
+  enviarP.addEventListener('click', function() {comprobarAdivinanza(enviarP, 'P')});
+  enviarQ.addEventListener('click', function() {comprobarAdivinanza(enviarQ, 'Q')});
+  enviarR.addEventListener('click', function() {comprobarAdivinanza(enviarR, 'R')});
+  enviarS.addEventListener('click', function() {comprobarAdivinanza(enviarS, 'S')});
+  enviarT.addEventListener('click', function() {comprobarAdivinanza(enviarT, 'T')});
+  enviarV.addEventListener('click', function() {comprobarAdivinanza(enviarV, 'V')});
+  enviarW.addEventListener('click', function() {comprobarAdivinanza(enviarW, 'W')});
+  enviarX.addEventListener('click', function() {comprobarAdivinanza(enviarX, 'X')});
+  enviarY.addEventListener('click', function() {comprobarAdivinanza(enviarY, 'Y')});
+  enviarZ.addEventListener('click', function() {comprobarAdivinanza(enviarZ, 'Z')});
+
+
+
+  // Declaración de función que se activa al fin del juego
+  function terminarJuego() {
+    enviarA.disabled = true;
+    enviarB.disabled = true;
+    enviarC.disabled = true;
+    enviarD.disabled = true;
+    enviarE.disabled = true;
+    enviarF.disabled = true;
+    enviarG.disabled = true;
+    enviarH.disabled = true;
+    enviarI.disabled = true;
+    enviarJ.disabled = true;
+    enviarK.disabled = true;
+    enviarL.disabled = true;
+    enviarM.disabled = true;
+    enviarN.disabled = true;
+    enviarO.disabled = true;
+    enviarP.disabled = true;
+    enviarQ.disabled = true;
+    enviarR.disabled = true;
+    enviarS.disabled = true;
+    enviarT.disabled = true;
+    enviarV.disabled = true;
+    enviarW.disabled = true;
+    enviarX.disabled = true;
+    enviarY.disabled = true;
+    enviarZ.disabled = true;
+
+
+  }
+</script>
+
+</body>
+</html>

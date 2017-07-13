@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Un juego</title>
+</head>
+<body>
+
+<h1>Juego: Adivinando la palabra</h1>
+
+<p>Hemos seleccionado una palabra. ¿Puedes adivinarla en menos de 12 intentos?</p>
+
+<div class="form">
+  <input type="submit" value="A" class="enviarA">
+  <input type="submit" value="B" class="enviarB">
+  <input type="submit" value="C" class="enviarC">
+  <input type="submit" value="D" class="enviarD">
+  <input type="submit" value="E" class="enviarE">
+  <input type="submit" value="F" class="enviarF">
+  <input type="submit" value="G" class="enviarG">
+  <input type="submit" value="H" class="enviarH">
+  <input type="submit" value="I" class="enviarI">
+  <input type="submit" value="J" class="enviarJ">
+</div>
+
+<p class="textoResultado"></p>
+
+</body>
+
+<script>
+  // Declaración de variables
+  var palabras = ['Hola', 'Colombia', 'Clubes', 'Ciencias', 'Javascript','programacion'];
+  var numeroAleatorio = Math.floor(Math.random() * palabras.length);
+  var palabraAleatorio = palabras[numeroAleatorio];
+  console.log(palabraAleatorio);
+
+  var enviarA = document.querySelector('.enviarA');
+  var enviarB = document.querySelector('.enviarB');
+  var enviarC = document.querySelector('.enviarC');
+  var enviarD = document.querySelector('.enviarD');
+  var enviarE = document.querySelector('.enviarE');
+  var enviarF = document.querySelector('.enviarF');
+  var enviarG = document.querySelector('.enviarG');
+  var enviarH = document.querySelector('.enviarH');
+  var enviarI = document.querySelector('.enviarI');
+  var enviarJ = document.querySelector('.enviarJ');
+  
+  var textoResultado = document.querySelector('.textoResultado');
+  var resultadoActual = '';
+  for (var i = 0; i < palabraAleatorio.length; i++) {
+    resultadoActual += '#';
+  }
+  textoResultado.textContent = resultadoActual;
+
+  var cuentaDeAdivinanzas = 12;
+
+  // Declaración de función para el juego
+  function comprobarAdivinanza(boton, letra) {
+    boton.disabled = true;
+
+    if (palabraAleatorio.toLowerCase().includes(letra.toLowerCase())) {
+      for (var i = 0; i < palabraAleatorio.length; i++) {
+        if (palabraAleatorio[i].toLowerCase() === letra.toLowerCase()) {
+          resultadoActual = resultadoActual.substr(0, i) + palabraAleatorio[i] + resultadoActual.substr(i + 1);
+        }
+      }
+
+      textoResultado.textContent = resultadoActual;
+    }
+
+    if (resultadoActual.includes('#') === false) {
+      textoResultado.textContent = '¡Felicitaciones! ¡Lo lograste! Refresca la página para volver a jugar.';
+      terminarJuego();
+    } else if (cuentaDeAdivinanzas === 12) {
+      textoResultado.textContent = '¡GAME OVER! Refresca la página para intentar de nuevo.';
+      terminarJuego();
+    }
+   
+    cuentaDeAdivinanzas++;
+  }
+
+  // Indica cuál función activa cuando se hace clic en el botón
+  enviarA.addEventListener('click', function() {comprobarAdivinanza(enviarA, 'A')});
+  enviarB.addEventListener('click', function() {comprobarAdivinanza(enviarB, 'B')});
+  enviarC.addEventListener('click', function() {comprobarAdivinanza(enviarC, 'C')});
+  enviarD.addEventListener('click', function() {comprobarAdivinanza(enviarD, 'D')});
+  enviarE.addEventListener('click', function() {comprobarAdivinanza(enviarE, 'E')});
+  enviarF.addEventListener('click', function() {comprobarAdivinanza(enviarF, 'F')});
+  enviarG.addEventListener('click', function() {comprobarAdivinanza(enviarG, 'G')});
+  enviarH.addEventListener('click', function() {comprobarAdivinanza(enviarH, 'H')});
+  enviarI.addEventListener('click', function() {comprobarAdivinanza(enviarI, 'I')});
+  enviarJ.addEventListener('click', function() {comprobarAdivinanza(enviarJ, 'J')});
+
+  // Declaración de función que se activa al fin del juego
+  function terminarJuego() {
+    enviarA.disabled = true;
+    enviarB.disabled = true;
+    enviarC.disabled = true;
+    enviarD.disabled = true;
+    enviarE.disabled = true;
+    enviarF.disabled = true;
+    enviarG.disabled = true;
+    enviarH.disabled = true;
+    enviarI.disabled = true;
+    enviarJ.disabled = true;
+  }
+</script>
+
+</body>
+</html>

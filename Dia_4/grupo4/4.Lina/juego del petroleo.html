@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Juego del petroleo</title>
+</head>
+<body>
+
+<h1>Juego: Adivinando la respuesta</h1>
+
+<p class="preguntaTexto"></p>
+
+
+
+    
+
+  <div class="form">
+  <label for="porIntento">selecciona aquí: </label>
+ 
+  <input type="submit" value="Falso" class="enviarFalso">
+  <input type="submit" value="Verdadero" class="enviarVerdadero">
+</div>
+
+<p class="intentos"></p>
+<p class="textoResultado"></p>
+
+</body>
+
+<script>
+  // Declaración de variables
+
+  var preguntas = ["El petroleo nos puede dar dolor de cabeza", "El petroleo no tiene impacto en el medio ambiente"];
+  var respuestas = [true, false];
+    
+  var numeroAleatorio = Math.floor(Math.random() * preguntas.length);
+  var pregunta = preguntas[numeroAleatorio];
+  var respuesta = respuestas[numeroAleatorio];
+    
+    
+  var preguntaTexto = document.querySelector('.preguntaTexto');
+  preguntaTexto.textContent = pregunta
+
+  var enviarFalso = document.querySelector('.enviarFalso');
+  var enviarVerdadero = document.querySelector('.enviarVerdadero');
+
+  var intento = document.querySelector('.intento');
+
+  var intentos = document.querySelector('.intentos');
+  var textoResultado = document.querySelector('.textoResultado');
+
+  var cuentaDeAdivinanzas = 1;
+
+  // Declaración de funciona para el juego
+  function comprobarVerdadero(respuesta) { 
+    if (respuesta) {
+      // Correcto
+      textoResultado.textContent = '¡Felicitaciones! ¡Lo lograste! Refresca la página para volver a jugar.';
+      textoResultado.style.backgroundColor = 'green'; // verde
+      terminarJuego();
+    } else {
+      // Incorrecto 
+      textoResultado.textContent = '¡GAME OVER! Refresca la página para intentar de nuevo.';
+      terminarJuego();
+    }
+  }
+  function comprobarFalso(respuesta) { 
+    if (respuesta) {
+      // Incorrecto
+      textoResultado.textContent = '¡GAME OVER! Refresca la página para intentar de nuevo.';
+      terminarJuego();
+    } else {
+      // Correcto 
+      textoResultado.textContent = '¡Felicitaciones! ¡Lo lograste! Refresca la página para volver a jugar.';
+      textoResultado.style.backgroundColor = 'green'; // verde
+      terminarJuego();
+    }
+  }
+
+
+
+  // Indica cuál función activa cuando se hace clic en el botón
+  // (function(i) {enviarVerdadero.addEventListener('click', function() {comprobarAdivinanza(respuesta)})}(i))  
+  enviarVerdadero.addEventListener('click', function() {comprobarVerdadero(respuesta)});
+  enviarFalso.addEventListener('click', function() {comprobarFalso(respuesta)});
+
+  // Declaración de función que se activa al fin del juego
+  function terminarJuego() {
+    enviarVerdadero.disabled = true;
+    enviarFalso.disabled = true;
+  }
+</script>
+
+</body>
+</html>

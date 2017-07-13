@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Práctica con formas</title>
+</head>
+<body>
+
+<h1 class="textoTitulo">El Título</h1>
+
+<p class="textoCuerpo">El cuerpo</p>
+
+<div>
+  <label>Texto del título: </label>
+  <input type="text" class="nuevoTextoTitulo">
+  <input type="submit" value="Enviar" class="enviarTitulo">
+  <label> Color del texto: </label>
+  <input type="submit" value="Purple" class="enviarTextoTituloPurple">
+  <label> Color de fondo: </label>
+  <input type="submit" value="Yellow" class="enviarTituloYellow">
+  <label> texto del cuerpo: </label>
+  <input type="text" class="nuevoTextoCuerpo">
+  <input type="submit" value="Enviar" class="enviarTexto">
+</div>
+
+<script>
+  // Declaraciones de variables
+  var textoTitulo = document.querySelector('.textoTitulo');
+  var nuevoTextoTitulo = document.querySelector('.nuevoTextoTitulo');
+  var enviarTitulo = document.querySelector('.enviarTitulo');
+
+  var enviarTextoTituloPurple = document.querySelector('.enviarTextoTituloPurple');
+
+  // Declaraciones de funciones
+  function cambiarTitulo() {
+    textoTitulo.textContent = nuevoTextoTitulo.value;
+  }
+
+  function cambiarColorTextoTitulo(color) {
+    textoTitulo.style.color = color;
+  }
+
+  // Indica cuál función activa cuando se hace clic en un botón
+  enviarTitulo.addEventListener('click', cambiarTitulo);
+    
+    
+ // Declaraciones de variables
+  var textoCuerpo = document.querySelector('.textoCuerpo');
+  var nuevoTextoCuerpo = document.querySelector('.nuevoTextoCuerpo');
+  var enviarCuerpo = document.querySelector('.enviarCuerpo');
+
+  var enviarTextoCuerpoBlack = document.querySelector('.enviarTextoCuerpoBlack');
+
+  // Declaraciones de funciones
+  function cambiarCuerpo() {
+    textoCuerpo.textContent = nuevoTextoCuerpo.value;
+  }
+
+  function cambiarColorTextoCuerpo(color) {
+    textoCuerpo.style.color = color;
+  }
+
+  // Indica cuál función activa cuando se hace clic en un botón
+  enviarCuerpo.addEventListener('click', cambiarCuerpo);
+
+  enviarTextoCuerpoBlack.addEventListener('click', function() {cambiarColorTextoCuerpo('Black')});
+</script>
+
+</body>
+</html>

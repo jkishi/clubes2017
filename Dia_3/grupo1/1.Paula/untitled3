@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Web Responsive</title>
+   <meta name="viewport" content="width=divice-width, user-scalable=no, initial-scale=1, maximum scale=1, minimum-scale=1">
+   <link rel="stylesheet" href="css/fontello.css">
+   <link rel="stylesheet" href="css/estilos.css">
+   <link rel="stylesheet" href="css/menu.css">
+   <link rel="stylesheet" href="css/banner.css">
+   <link rel="stylesheet" href="css/info.css">
+   
+   
+</head>
+<body>
+  
+  <input type="checkbox" id="Cerrar">
+  <label for="Cerrar" id="btn-cerrar">X</label>
+  <div class="Modal">
+     <div class="Contenido">
+          <h2>Hola A Todos...</h2>
+      <img src="img/logo.jpg" alt="">
+     </div>
+  </div>
+  
+  
+   <header>
+       <div class="contenedor">
+           <h1 class="icon-emo-wink">DÍA DE LOS CASADOS</h1> <!-- El nombre del icono está ejecutando demo de la carpeta fontello-->
+           <input type="checkbox" id="menu-bar">
+           <label class="icon-emo-saint" for="menu-bar"></label>
+       <nav class="menu">
+           <a href="index.html">Inicio</a>
+           <a href="salones.html">Salones</a>
+           <a href="fiesta.html">Fiesta</a>
+           <a href="contactos.html">Contactos</a>
+       </nav>
+       </div>
+   </header>
+   
+   <main>
+       <section id="banner">
+           <img src="img/b1.jpg" alt="">
+           <div class="contenedor">
+               <h2>Todos Felices...</h2>
+               <p>Hablemos solo de fiestas es interesante</p>
+               <a href="mejoresMascota.html">Leer más..</a>
+           </div>
+       </section>
+       
+       <section id="bienvenidos">
+          <div class="contenedor">
+           <h2>Matrimonio Bogotá DC</h2>
+           <P> Guía para Matrimonios: Descubre aquí la guía indispensable para organizar tu boda como siempre la habías imaginado. Todas las empresas de Bogotá DC especializadas en bodas: los mejores profesionales en banquetes, las haciendas y organizadores de eventos nupciales; los vestidos clásicos o las últimas tendencias de los mejores diseñadores; todos los detalles necesarios para tu boda civil o religiosa; y cualquier proveedor y especialista que puedas necesitar para planificar tu boda de ensueño. </P>
+           </div>
+       </section>
+       <section id="blog">
+           <h3>Lo ultimo del matrimonio es ver bailar al novio con la novia</h3>
+           <div class="contenedor">
+              <!--            article*3>img+h4-->
+               <article>
+                  <img src="img/img.1.jpg" alt="">
+                  <h4>Esto Sueño Contigo</h4>
+              </article>
+              <article>
+                  <img src="img/img.2.jpg" alt="">
+                  <h4>Cuando Estare Asi Contigo</h4>
+              </article>
+              <article>
+                  <img src="img/img.3.jpg" alt="">
+                  <h4>Siempre Soñare Esto Contigo</h4>
+              </article>
+           </div>
+       </section>
+       <section id="info">
+           <h3>Es Un Dia Muy Especial Para Los Dos</h3>
+<!--            .contenedor-->
+           <div class="contenedor">
+<!--                .info-pet*4>img+h4-->
+          <div class="info-pet">
+             
+              <a href="galeria.html"><img src="img/img.4.jpg" alt=""></a>
+              <h4>Mis Muñecos</h4>
+          </div>
+          <div class="info-pet">
+              <a href="galeria2.html"><img src="img/img.5.jpg" alt=""></a>
+              <h4>Te Amo</h4>
+          </div>
+          <div class="info-pet">
+              <a href="salones.html"><img src="img/img.6.jpg" alt=""></a>
+              <h4>El Sueño Mas Dulce Eres Tu</h4>
+          </div>
+          <div class="info-pet">
+              <a href="contactos.html"></a><img src="img/img.7.jpg" alt="">
+              <h4>Te Quiero Mucho</h4>
+          </div>
+           </div>
+       </section>
+   </main>
+   <footer>
+       <div class="contenedor">
+           <p class="copy"> Majo, Angie Y Saray  &copy; 2017</p>
+           <div class="sociales">
+               <a class="icon-facebook" href="#"></a>
+               <a class="icon-twitter" href="#"></a>
+               <a class="icon-users" href="#"></a>
+               <a class="icon-paw" href="#"></a>
+           </div>
+       </div>
+   </footer>
+   
+</body>
+</html>

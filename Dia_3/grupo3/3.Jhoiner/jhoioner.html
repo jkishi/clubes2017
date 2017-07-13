@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>arte magnetico</title>
+</head>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Práctica con formas</title>
+</head>
+<body>
+    
+<h1 class="textoTitulo">aprender arte magnetico</h1>
+
+<p class="textoCuerpo">contextualisacion</p>
+
+<div>
+  <label>Texto del título: </label>
+  <input type="text" class="nuevoTextoTitulo">
+  <input type="submit" value="Enviar" class="enviarTitulo">
+</div>
+
+<script>
+  // Declaraciones de variables
+  var textoTitulo = document.querySelector('.textoTitulo');
+  var nuevoTextoTitulo = document.querySelector('.nuevoTextoTitulo');
+  var enviarTitulo = document.querySelector('.enviarTitulo');
+
+  // Declaraciones de funciones
+  function cambiarTitulo() {
+    textoTitulo.textContent = nuevoTextoTitulo.value;
+  }
+
+  // Indica cuál función activa cuando se hace clic en un botón
+  enviarTitulo.addEventListener('click', cambiarTitulo);
+</script>
+<div>
+    
+  <label>Texto del cuerpo: </label>
+  <input type="text" class="nuevoTextoCuerpo">
+  <input type="submit" value="Enviar" class="enviarCuerpo">
+</div>
+
+<script>
+  // Declaraciones de variables
+  var textoCuerpo = document.querySelector('.textoCuerpo');
+  var nuevoTextoCuerpo = document.querySelector('.nuevoTextoCuerpo');
+  var enviarCuerpo = document.querySelector('.enviarCuerpo');
+
+  // Declaraciones de funciones
+  function cambiarCuerpo() {
+    textoCuerpo.textContent = nuevoTextoCuerpo.value;
+  }
+
+  // Indica cuál función activa cuando se hace clic en un botón
+  enviarCuerpo.addEventListener('click', cambiarCuerpo);
+</script>
+    </body>
+    </html>
+     <input type="submit" value="Enviar" class="enviarTitulo">
+  <label> Color del texto: </label>
+  <input type="submit" value="Brown" class="enviarTextoTituloBrown">
+    <label> Color del texto: </label>
+  <input type="submit" value="Rojo" class="enviarTextoTituloRojo">
+   <label> Color de fondo: </label>
+  <input type="submit" value="Azul" class="enviarFondoTituloAzul">
+  <input type="text" placeholder="color de texto" class="colorTextoCuerpo">
+   <input type="submit" value="Enviar" class="enviarTextoCuerpoColor"> 
+     <input type="text" placeholder="color de fondo" class="colorTextoFondo">
+    <input type="submit" value="Enviar" class="enviarFondoCuerpoColor"> 
+<script>
+  // Declaraciones de variables
+  var textoTitulo = document.querySelector('.textoTitulo');
+  var nuevoTextoTitulo = document.querySelector('.nuevoTextoTitulo');
+  var enviarTitulo = document.querySelector('.enviarTitulo');
+
+  var enviarTextoTituloRojo = document.querySelector('.enviarTextoTituloRojo');
+  var enviarFondoTituloAzul = document.querySelector('.enviarFondoTituloAzul');
+    
+  var colorTextoCuerpo = document.querySelector(".colorTextoCuerpo");
+
+  // Declaraciones de funciones
+  function cambiarTitulo() {
+  	textoTitulo.textContent = nuevoTextoTitulo.value;
+  }
+
+  function cambiarColorTextoTitulo(color) {
+    textoTitulo.style.color = color;
+  }
+
+  function cambiarColorFondoTitulo(color) {
+    textoTitulo.style.backgroundColor = color;
+  }
+
+  // Indica cuál función activa cuando se hace clic en un botón
+  enviarTitulo.addEventListener('click', cambiarTitulo); 
+
+  enviarTextoTituloRojo.addEventListener('click', function() {cambiarColorTextoTitulo('red')});
+  enviarFondoTituloAzul.addEventListener('click', function() {cambiarColorFondoTitulo('blue')});
+</script>
+
+<script>
+  // Declaraciones de variables
+  var textoTitulo = document.querySelector('.textoTitulo');
+  var nuevoTextoTitulo = document.querySelector('.nuevoTextoTitulo');
+  var enviarTitulo = document.querySelector('.enviarTitulo');
+    
+    var enviarTextoCuerpoColor = document.querySelector('.enviarTextoCuerpoColor');
+  var enviarFondoCuerpoColor = document.querySelector('.enviarFondoCuerpoColor');
+
+  var enviarTextoTituloBrown = document.querySelector('.enviarTextoTituloBrown');
+
+  // Declaraciones de funciones
+  function cambiarTitulo() {
+    textoTitulo.textContent = nuevoTextoTitulo.value;
+  }
+
+  function cambiarColorTextoTitulo(color) {
+    textoTitulo.style.color = color;
+  }
+    
+    function cambiarColorTextoCuerpo(color) {
+    textoCuerpo.style.color = color;
+  }
+
+  function cambiarColorFondoCuerpo(color) {
+    textoCuerpo.style.backgroundColor = color;
+  }
+
+   // Indica cuál función activa cuando se hace clic en un botón
+  enviarTitulo.addEventListener('click', cambiarTitulo);
+
+  enviarTextoTituloBrown.addEventListener('click', function() {cambiarColorTextoTitulo('Brown')});
+    
+     enviarTextoCuerpoColor.addEventListener('click', function() {cambiarColorTextoCuerpo(colorTextoCuerpo.value)});
+  enviarFondoCuerpoColor.addEventListener('click', function() {cambiarColorFondoCuerpo(colorTextoCuerpo.value)});
+    
+</script>
+  
+    <p>A veces puede ser difícil limpiar el interior de contenedores, como floreros y peceras. A continuación te explicamos como fabricar, en tu casa y fácilmente un limpiador para jarrones y acuarios. Muchos floreros tienen una abertura demasiado estrecha para meter la mano, y una forma que hace imposible tratar de usar un cepillo. En un tanque de peces, a menudo hay que vaciar el depósito con el fin de limpiar el cristal. Ambos problemas pueden resolverse fácilmente con un cepillo magnético simple.</p>
+    
+    <img src="loading.jpg" width=200 height=200>
+<body background="seto.png">

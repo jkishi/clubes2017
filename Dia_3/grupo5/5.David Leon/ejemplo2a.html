@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Práctica con formas</title>
+</head>
+<body>
+
+<h1 class="textoTitulo">El Título</h1>
+
+<p class="textoCuerpo">El cuerpo</p>
+
+<div>
+  <label>Texto del título: </label>
+  <input type="text" class="nuevoTextoTitulo">
+  <input type="submit" value="#" class="enviarTitulo">
+</div>
+ <label>Texto del cuerpo: </label>
+  <input type="text" class="nuevoTextoCuerpo">
+  <input type="submit" value="#" class="enviarTitulo">
+<script>
+  // Declaraciones de variables
+  var textoTitulo = document.querySelector('.textoCuerpo');
+  var nuevoTextoTitulo = document.querySelector('.texto deCuerpo');
+  var enviarTitulo = document.querySelector('.enviarCuerpo');
+var textoCuerpo = document.querySelector('.textoCuerpo');
+  var nuevoTextocuerpo = document.querySelector('.texto deCuerpo');
+  var enviarTitulo = document.querySelector('.enviarCuerpo');
+  // Declaraciones de funciones
+  function cambiarTitulo() {
+    textoTitulo.textContent = "hola"// nuevoTextoTitulo.value;
+  }
+
+  // Indica cuál función activa cuando se hace clic en un botón
+  enviarTitulo.addEventListener('click', cambiarTitulo);
+</script>
+
+</body>
+</html>
